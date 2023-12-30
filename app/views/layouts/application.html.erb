@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UnivApp</title>
+    <title>Tech University</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,23 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- Add Materialize NavBar -->
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo right">Tech University</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Enrollments</a></li>
+            <li><a href="#">Account</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Materialize NavBar -->
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

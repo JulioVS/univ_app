@@ -26,6 +26,11 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Udemy: Add Materialize CSS Styling to Rails 7
+gem "materialize-sass"
+gem "sassc-rails"
+gem "material_icons"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
