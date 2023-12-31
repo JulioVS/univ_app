@@ -7,4 +7,5 @@ import "controllers"
 $(document).ready(function() {
   // alert("Inside 'document.ready()' handler");
   $(".dropdown-trigger").dropdown();
+  $('.sidenav').sidenav();
 });
