@@ -6,96 +6,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <!-- Include JQuery online library *before* Materialize, to fix NavBar dropdown issue -->
+    <!-- Include JQuery online library *before* Materialize -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- End JQuery include -->
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <!-- Include Materialize online libraries *after* JQuery, to fix NavBar dropdown issue -->
+    <!-- Include Materialize online libraries *after* JQuery -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- End Materialize include -->
   </head>
 
   <body>
+    <%= render 'layouts/navigation' %>
 
-    <!-- Add Materialize NavBar -->
-    <header>
-      <!-- Dropdown Structures -->
-      <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-      <ul id="dropdown2" class="dropdown-content">
-        <li><a href="#!">one</a></li>
-        <li><a href="#!">two</a></li>
-        <li class="divider"></li>
-        <li><a href="#!">three</a></li>
-      </ul>
-      <!-- Bar -->
-      <nav>
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="#" class="brand-logo right">Tech University</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <!-- Top Navigation -->
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Enrollments</a></li>
-              <!-- Dropdown Trigger (Top) -->
-              <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>         
-            </ul>
-            <!-- Side Navigation -->
-            <ul class="sidenav" id="mobile-demo">
-              <li><a href="#">Courses</a></li>
-              <li><a href="#">Enrollments</a></li>
-              <!-- Dropdown Trigger (Side) -->
-              <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>         
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- End Materialize NavBar -->
-
-    <!-- Main Rails Content -->
     <main>
       <div class="container">
         <%= yield %>
       </div>
     </main>
-    <!-- End Main Content -->
 
-    <!-- Add Materialize Footer -->
-    <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5 class="white-text">Tech University</h5>
-            <p class="grey-text text-lighten-4">The future of development training</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5 class="white-text">Information</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Contact us</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright">
-        <div class="container">
-        © 2023 APL Design
-        <a class="grey-text text-lighten-4 right" href="#!">About</a>
-        </div>
-      </div>
-    </footer>
-    <!-- End Materialize Footer -->
-
+    <%= render 'layouts/footer' %>
   </body>
 </html>
