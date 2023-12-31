@@ -6,8 +6,17 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Include JQuery online library *before* Materialize, to fix NavBar dropdown issue -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- End JQuery include -->
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Include Materialize online libraries *after* JQuery, to fix NavBar dropdown issue -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- End Materialize include -->
   </head>
 
   <body>
