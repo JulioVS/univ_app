@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root "courses#index"
   get "courses/new" => "courses#new"
   get "about" => "pages#about"
+  resources :students, except: [:destroy] 
 end
