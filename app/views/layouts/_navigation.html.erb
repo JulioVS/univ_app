@@ -1,5 +1,5 @@
-<!-- Add Materialize NavBar -->
 <header>
+  <!-- Add Materialize NavBar -->
   <!-- Dropdown Structures -->
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="#!">one</a></li>
@@ -36,5 +36,17 @@
       </div>
     </div>
   </nav>
+  <!-- End Materialize NavBar -->
+
+  <!-- Flash Messages Display -->
+  <% flash.each do |key, message| %>
+    <div class="container">
+    <div class="row sign-up-form">
+    <div class="col s12 m12 l12">
+    <div class="card-panel red lighten-2" id="fade-out-target">
+    <span class="white-text">  
+      <%= message %>
+    </span></div></div></div></div>
+  <% end %>
+  <!-- End Messages Display -->
 </header>
-<!-- End Materialize NavBar -->
