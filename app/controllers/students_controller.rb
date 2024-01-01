@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
       flash[:success] = "You have successfully signed up"
       redirect_to root_path
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
     end
   end
 
