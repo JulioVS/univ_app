@@ -6,7 +6,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    # @student = Student.find(params[:id])
+    # Llamada implícita a set_student
   end
 
   def new
@@ -18,18 +18,18 @@ class StudentsController < ApplicationController
 
     if @student.save
       flash[:notice] = "You have successfully signed up"
-      redirect_to root_path
+      redirect_to @student
     else
       render 'new', status: :unprocessable_entity
     end
   end
 
   def edit
-    # @student = Student.find(params[:id])
+    # Llamada implícita a set_student
   end
 
   def update
-    # @student = Student.find(params[:id])
+    # Llamada implícita a set_student
 
     if @student.update(student_params)
       flash[:notice] = "You have successfully updated your profile"
@@ -41,11 +41,12 @@ class StudentsController < ApplicationController
 
   private
 
+  def set_student
+    @student = Student.find(params[:id])
+  end
+
   def student_params
     params.require(:student).permit(:name, :email) 
   end
 
-  def set_student
-    @student = Student.find(params[:id])
-  end
 end
