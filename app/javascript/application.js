@@ -8,5 +8,5 @@ $(document).ready(function() {
   // alert("Inside 'document.ready()' handler");
   $(".dropdown-trigger").dropdown();
   $('.sidenav').sidenav();
-  $('#fade-out-target').fadeOut(4000);  // doesn't work
+  $('#fade-out-target').fadeOut(4000);  // add 'data: {turbo: false}' to the view's form tag to make this work
 });
