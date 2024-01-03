@@ -8,19 +8,19 @@
 <!-- Title -->
 <h3 class="header">Log in</h3>
 
-<!-- Student input/update data form -->
+<!-- Log in form -->
 <%= form_for( :logins, html: { class: "col s12"}, data: { turbo: false } ) do |f| %>
 
   <div class="row">
     <div class="input-field col s12">
       <%= f.email_field :email, placeholder: "Enter your e-mail address", autofocus: true %>
-      <%= f.label :email %>
+      <%= f.label :email, class: "active" %>
     </div>
   </div>          
   <div class="row">
     <div class="input-field col s12">
       <%= f.password_field :password, placeholder: "Enter your password" %>
-      <%= f.label :password %>
+      <%= f.label :password, class: "active" %>
     </div>
   </div>          
 
