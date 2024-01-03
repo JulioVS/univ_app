@@ -1,4 +1,8 @@
 class LoginsController < ApplicationController
+  # Tenemos que excluir al propio proceso de Login de la obligacion de tener 
+  # usuario logueado, caso contrario la app quedaria en loop
+  skip_before_action :require_user, only: [:new, :create]
+  
   def new
     
   end

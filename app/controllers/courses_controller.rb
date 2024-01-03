@@ -1,4 +1,7 @@
 class CoursesController < ApplicationController
+  # Pagina publica, no requiere login previo
+  skip_before_action :require_user
+
   def index
     @courses = Course.all 
   end
