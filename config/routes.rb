@@ -6,8 +6,20 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "courses#index"
-  get "courses/new" => "courses#new"
-  get "about" => "pages#about"
+
+  # Courses
+  root 'courses#index'
+  get  'courses/new' => 'courses#new'
+
+  # Pages
+  get 'about' => 'pages#about'
+  
+  # Students
   resources :students, except: [:destroy] 
+  
+  # Sessions
+  get    'login'  => 'logins#new'
+  post   'login'  => 'logins#create'
+  delete 'logout' => 'logins#destroy'
+
 end

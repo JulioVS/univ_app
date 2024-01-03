@@ -41,10 +41,11 @@
     </div>
   </div>       
 
+  <% icon = "<i class='material-icons right'>arrow_forward</i>" %>
   <% if @student.new_record? %>
-    <% label = "<i class='material-icons right'>arrow_forward</i>Sign up" %>
+    <% label = icon + "Sign up" %>
   <% else %>
-    <% label = "<i class='material-icons right'>arrow_forward</i>Submit changes" %>
+    <% label = icon + "Submit changes" %>
   <% end %>
 
   <div class="row">
