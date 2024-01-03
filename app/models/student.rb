@@ -1,4 +1,6 @@
 class Student < ApplicationRecord
+  has_many :student_courses                     # <- plural
+  has_many :courses, through: :student_courses  # <- plural
 
   before_save { self.email = email.downcase }
 

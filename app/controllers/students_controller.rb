@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
-  # Logicamente, se excluye la propia creacion de usuario del requeriiento de 
-  # deber tener un usuario logueado.-
+  # Logicamente, se excluye la propia creacion de usuario del requerimiento de 
+  # tener un usuario logueado.-
   skip_before_action :require_user, only: [:new, :create]
 
   before_action :set_student, only: [:show, :edit, :update]
