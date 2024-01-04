@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   post   'login'  => 'logins#create'
   delete 'logout' => 'logins#destroy'
 
+  # Enrollment
+  post 'course_enroll' => 'student_courses#create'
 end
